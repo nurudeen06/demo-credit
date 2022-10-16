@@ -1,0 +1,23 @@
+{
+  "name": "demo-credit",
+  "version": "1.0.0",
+  "description": "A Demo Credit Rest-API Aplication",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "demo-credit"
+  },
+  "keywords": [
+    "Credit",
+    "Money",
+    "Transfer"
+  ],
+  "author": "Nurudeen Ahmed",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^2.3.0"
+  }
+}
