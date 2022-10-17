@@ -17,17 +17,31 @@ router.post('/register', async (req,res) => {
 })
 
 router.post('/fund', async (req, res) => {
-    res.json(await auth.verify(req.headers));
+    res.json({
+        "status": true,
+        "message": "Fund Route Working"
+    });
+});
+
+router.post('/withdraw', async (req, res) => {
+    res.json({
+        "status": true,
+        "message": "Withdrawal Route Working"
+    });
 });
 
 router.post('/transfer', async (req, res) => {
     var checkToken = await auth.verify(req.headers);
     if(checkToken){
-        await controller.transfer(req.body, checkToken)
-        res.send('Okay')
+        var transfer = await controller.transfer(req.body, checkToken)
+        res.json(transfer)
     }else {
         res.json({'success':false, 'message': 'Invalid Token'})
     }
+});
+
+router.get('/history', async (req, res) => {
+    res.send(await controller.history(req.body.id));
 });
 
 export default router;

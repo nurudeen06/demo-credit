@@ -4,7 +4,7 @@ import auth from './auth.js';
 const login = async (param) => {
 var result = [];
 
-var user = await model.selectDB.selectTB('users',{
+var user = await model.selectDB('users',{
       id: 'id',
       email: 'email',
       firstName: 'first_name',

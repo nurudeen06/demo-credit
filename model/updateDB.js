@@ -1,19 +1,16 @@
 import { response } from "express";
 import db from "../config/database.js";
 
-const updateDB = (table,payload,arg) => {
-var response;
-    db(table)
+const updateDB = async (table,payload,arg) => {
+await db(table)
     .update(payload)
     .where(arg)
     .then((data) => {
-        response = {"success": true, "data": data}; 
+        return true;
     })
     .catch((err) => {
-        response = {"success": false, "message": "An error occurred, please try again later."}; 
+        return false; 
     })
-    
-
 }
 
 export default updateDB;

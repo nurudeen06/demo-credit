@@ -1,6 +1,6 @@
  import db from "../config/database.js";
 
-const selectTB = async (table, payload, arg) => {
+const selectDB = async (table, payload, arg) => {
 var response = {};
 var query =  db(table)
     await query.select(payload);
@@ -15,11 +15,4 @@ var query =  db(table)
     })
 return response;
 }
-const joinTB = (tables, payload) => {
-
-}
- const selectDB = {
-    selectTB, joinTB
- }
-
  export default selectDB;
