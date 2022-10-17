@@ -7,10 +7,10 @@ var response;
     .update(payload)
     .where(arg)
     .then((data) => {
-        response = data; 
+        response = {"success": true, "data": data}; 
     })
     .catch((err) => {
-        response
+        response = {"success": false, "message": "An error occurred, please try again later."}; 
     })
     
 
